@@ -3,7 +3,7 @@ import { colors } from "./constants.js"
 
 
 export const GlobalStyle = createGlobalStyle`
-  *, *::after, *::before {
+  *, ::after, ::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;

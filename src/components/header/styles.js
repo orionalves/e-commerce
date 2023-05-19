@@ -10,11 +10,12 @@ export const Container = styled.header`
     background-color: ${colors.primary};
     font-family: ${fonts.poppins};
     color: ${colors.background};
+    position: sticky;
+    top: 0;
+    left: 0;
 `
 
 export const Title = styled.p`
-    font-style: normal;
     font-weight: 400;
     font-size: 2rem;
-    line-height: 3rem;
 `
