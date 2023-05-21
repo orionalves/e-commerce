@@ -19,6 +19,7 @@ export const Container = styled.footer`
         gap: 1rem;
         padding: 0 1rem;
     }
+    background-color: ${colors.background};
 `
 
 export const Content = styled.div`
