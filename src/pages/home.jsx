@@ -1,6 +1,6 @@
 import { WrapperTitle, Products, LineBottom, Image, Product } from "./styles"
 import Title from "../components/title"
-import { SquareButton, SquareNumber, Checkbox } from "../components/square-buttons"
+import { SquareButton, SquareNumber, Checkbox } from "../components/buttons"
 import { products } from "../assets/constants"
 
 
