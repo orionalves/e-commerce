@@ -6,13 +6,12 @@ import { useState } from "react"
 
 const Home = () => {
     const [cartItens, setCartItens] = useState([])
-    const [pageTitle, setPageTitle] = useState("Produtos")
     
     return (
         <>
             <WrapperTitle>
                 <Title title={pageTitle} />
-                <SquareNumber item={cartItens.length} />
+                <SquareNumber item="Produtos" />
             </WrapperTitle>
             <Products>
                 {products.map((product) => (
