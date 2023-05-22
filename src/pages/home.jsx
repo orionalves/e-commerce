@@ -31,7 +31,6 @@ const Home = () => {
                 position="fixed" 
                 bottom="6.3rem" 
                 right="1.5rem" 
-                onClick={() => setPageTitle('Carrinho')}
             />
         </>
     )
