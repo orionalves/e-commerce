@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { fonts, colors } from "../../theme/constants"
 
-export const SquareButtons = styled.button`
+export const RetangularButtons = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,6 +29,7 @@ export const SquareNumbers = styled.div`
     align-items: center;
     justify-content: center;
     height: 3rem;
+    min-width: 3rem;
     font-family: ${fonts.poppins};
     color: ${colors.background};
     background-color: ${colors.primary};

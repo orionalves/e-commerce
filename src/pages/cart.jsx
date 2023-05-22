@@ -1,6 +1,6 @@
 import { WrapperTitle } from "./styles"
 import Title from "../components/title";
-import { SquareButton, SquareNumber } from "../components/buttons";
+import { RetangularButton, SquareNumber } from "../components/buttons";
 
 const Cart = () => (
   <WrapperTitle>

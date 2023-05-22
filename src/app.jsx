@@ -4,13 +4,23 @@ import Home from './pages/home'
 import Cart from './pages/cart'
 import { useState } from "react";
 
+// export const screens = {
+//   home: '<Home/>',
+//   cart: '<Cart/>',
+//   checkout: '<Checkout/>'
+// }
+
 export const screens = {
-  home: 0,
-  cart: 1,
-  checkout: 2
+    home: <Home/>,
+    cart: <Cart/>,
+    // checkout: <Checkout/>
 }
 
 const App = () => { 
+    const [currentPage, setCurrentPage] = useState(screens.home)
+    const handlePageChange = (page) => {
+        setCurrentPage(page);
+    }
     // const [screen, setScreen] = useState(screens.home)
     // const [itens, setItens] = useState(products)
     // const [cart, setCart] = useState([])
@@ -22,7 +32,7 @@ const App = () => {
     //     setCart([...cart, item])
     //   }
     return(
-    <Layout page={<Home/>}/>
+    <Layout page={currentPage} onPageChange={handlePageChange}/>
 )}
 
 export default App
