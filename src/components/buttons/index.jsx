@@ -1,8 +1,11 @@
-import { RetangularButtons, SquareNumbers, StyledCheckbox } from "./styles"
+import { RetangularButtons, SquareNumbers, StyledCheckbox, PlusMinusButtons } from "./styles"
 import { useState, useEffect } from "react"
 
 export const RetangularButton = ({item, ...rest }) => (
     <RetangularButtons { ...rest }>{item}</RetangularButtons>
+)
+export const PlusMinusButton = ({item, onClick}) => (
+    <PlusMinusButtons onClick={onClick}>{item}</PlusMinusButtons>
 )
 
 export const SquareNumber = ({item}) => (

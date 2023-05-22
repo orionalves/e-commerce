@@ -46,3 +46,18 @@ export const StyledCheckbox = styled.div`
     border-radius: 9px;
     background-color: ${props => props.checked ? colors.primary : colors.background};
 `
+
+export const PlusMinusButtons = styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    font-family: ${fonts.poppins};
+    color: ${colors.background};
+    background-color: ${colors.primary};
+    font-weight: 800;
+    font-size: 2rem;
+    padding: 0.3rem 1rem;
+    border: none;
+    border-radius: 9px;
+`
