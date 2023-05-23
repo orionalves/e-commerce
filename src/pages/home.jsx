@@ -3,15 +3,16 @@ import Title from "../components/title"
 import { RetangularButton, SquareNumber, Checkbox } from "../components/buttons"
 import { products } from "../assets/constants"
 import { useState } from "react"
+import { screens } from "../App"
 
-const Home = () => {
+const Home = ({changePage}) => {
     const [cartItens, setCartItens] = useState([])
     
     return (
         <>
             <WrapperTitle>
-                <Title title={pageTitle} />
-                <SquareNumber item="Produtos" />
+                <Title title="Produtos" />
+                <SquareNumber item={cartItens.length} />
             </WrapperTitle>
             <Products>
                 {products.map((product) => (
@@ -29,7 +30,8 @@ const Home = () => {
                 item="Ir para o carrinho" 
                 position="fixed" 
                 bottom="6.3rem" 
-                right="1.5rem" 
+                right="1.5rem"
+                onClick={() => changePage (screens.cart)}
             />
         </>
     )

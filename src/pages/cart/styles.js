@@ -40,10 +40,10 @@ export const RightContent = styled.div`
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
-    color: #141212;
+    /* color: #141212;
     font-family: ${fonts.poppins};
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 700; */
 `
 
 export const ItemName = styled.h2`
@@ -55,4 +55,11 @@ export const ItemName = styled.h2`
 export const WrapperPlusMinus = styled.div`
     display: flex;
     gap: 0.8rem;
+`
+
+export const Paragraph = styled.p`
+    color: #141212;
+    font-family: ${fonts.poppins};
+    font-size: 1rem;
+    font-weight: 700;
 `
