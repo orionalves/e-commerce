@@ -47,7 +47,7 @@ const Cart = ({ goToHome, goToCheckout, cartItens, handleCartItens }) => {
                 <SquareNumber item={cartItens.length} />
                 {/* <SquareNumber item={products.filter((product) => quantity[product.id] > 0).length} /> */}
             </WrapperTitle>
-            <CartItens cartItens={cartItens}/>
+            <CartItens cartItens={cartItens} updateCart={handleCartItens}/>
             {/* <Itens>
                 {products.map((product) => {
                     if (quantity[product.id] > 0) {
