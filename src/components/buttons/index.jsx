@@ -12,17 +12,23 @@ export const SquareNumber = ({item}) => (
     <SquareNumbers>{item}</SquareNumbers>
 )
 
-export const Checkbox = ({ onClick }) => {
+export const Checkbox = ({ onClick, checked }) => {
     const [isChecked, setIsChecked] = useState(false)
 
     useEffect(() => {
-        onClick(isChecked)
-      }, [isChecked])
-  
+        setIsChecked(checked);
+      }, [checked]);
+    
+      const handleCheckboxClick = () => {
+        const newChecked = !isChecked;
+        setIsChecked(newChecked);
+        onClick(newChecked);
+      };
+
     return (
-        <StyledCheckbox 
+        <StyledCheckbox
         checked={isChecked}
-        onClick={() => setIsChecked(!isChecked)}
+        onClick={handleCheckboxClick}
         />
     )
 }

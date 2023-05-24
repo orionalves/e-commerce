@@ -1,55 +1,24 @@
-import { WrapperTitle, Products, LineBottom, Image, Product } from "./styles"
+import { WrapperTitle } from "./styles"
 import Title from "../components/title"
-import { RetangularButton, SquareNumber, Checkbox } from "../components/buttons"
-import { products } from "../assets/constants"
-import { useState } from "react"
+import { RetangularButton, SquareNumber } from "../components/buttons"
 import { screens } from "../App"
+import Products from "../components/products"
 
-const Home = ({changePage}) => {
-    const [cartItens, setCartItens] = useState([])
-    
-    return (
-        <>
-            <WrapperTitle>
-                <Title title="Produtos" />
-                <SquareNumber item={cartItens.length} />
-            </WrapperTitle>
-            <Products>
-                {products.map((product) => (
-                    <Product key={product.id}>
-                        <Image src={product.image} alt={product.title + ' image'} />
-                        <LineBottom>
-                            <Checkbox onClick={(checked) => {
-                                setCartItens(checked ? [...cartItens, product.id] : cartItens.filter((id) => id !== product.id))}} />
-                            <p>Valor: R${product.price}</p>
-                        </LineBottom>
-                    </Product>
-                ))}
-            </Products>
-            <RetangularButton 
-                item="Ir para o carrinho" 
-                position="fixed" 
-                bottom="6.3rem" 
-                right="1.5rem"
-                onClick={() => changePage (screens.cart)}
-            />
-        </>
-    )
-}
+const Home = ({ changePage, cartItens, handleCartItens }) => (
+    <>
+        <WrapperTitle>
+            <Title title="Produtos" />
+            <SquareNumber item={cartItens.length} />
+        </WrapperTitle>
+        <Products itens={cartItens} setItens={handleCartItens} />
+        <RetangularButton
+            item="Ir para o carrinho"
+            position="fixed"
+            bottom="6.3rem"
+            right="1.5rem"
+            onClick={() => changePage(screens.cart)}
+        />
+    </>
+)
 
 export default Home
-
-// export const Checkbox = ({ onClick }) => {
-//     const [isChecked, setIsChecked] = useState(false)
-
-//     useEffect(() => {
-//         onClick(isChecked)
-//       }, [isChecked])
-  
-//     return (
-//         <StyledCheckbox 
-//         checked={isChecked}
-//         onClick={() => setIsChecked(!isChecked)}
-//         />
-//     )
-// }
