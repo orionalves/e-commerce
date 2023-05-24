@@ -22,12 +22,16 @@ const CartItens = ({ cartItens, updateCart }) => {
 
     const subtractValue = (value, productId, newQuantity) => {
         setAmount(() => {
-                if (value > 0) {
+                if (quantity[productId] > 0) {
                 return amount - value
             }
         })
-        setQuantity((quantity) => ({
-            ...quantity,
+        handleQuantityChange(productId, newQuantity)
+    }
+
+    const handleQuantityChange = (productId, newQuantity) => {
+        setQuantity((prevQuantity) => ({
+            ...prevQuantity,
             [productId]: newQuantity
         }))
     }

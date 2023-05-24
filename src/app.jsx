@@ -13,12 +13,17 @@ export const screens = {
 
 const App = () => { 
     const [currentPage, setCurrentPage] = useState(screens.home)
-    const [cartItens, setCartItens] = useState([])    
+    const [cartItens, setCartItens] = useState([])
+    const [quantity, setQuantity] = useState({})
+
     const handlePageChange = (page) => {
         setCurrentPage(page);
     }
     const handleCartItens = (item) => {
         setCartItens(item)
+    }
+    const handleQuantity = (item) => {
+        setQuantity(item)
     }
     return(
     <Layout> 
