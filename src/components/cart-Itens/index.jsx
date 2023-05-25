@@ -1,19 +1,23 @@
 import { Itens, Item, Image, ItemName, RightContent, WrapperPlusMinus, Paragraph } from "./styles"
 import { PlusMinusButton } from "../buttons"
-import { products } from "../../assets/constants"
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 
-const CartItens = ({ cartItens, updateCart }) => {
-    const [amount, setAmount] = useState(cartItens.reduce((accumulator, product) => accumulator + product.price, 0))
-    const [quantity, setQuantity] = useState({})
+const CartItens = ({ cartItens, updateCart, quantity, setQuantity, amount, setAmount, handleQuantity}) => {
     useEffect(() => {
-        const initialQuantity = products.reduce((acc, product) => {
-            acc[product.id] = 1;
-            return acc;
-        }, {});
+        const initialQuantity = cartItens.reduce((accumulator, product) => {
+            accumulator[product.id] = quantity[product.id] > 0 ? quantity[product.id] : 1
+            return accumulator
+        }, {})
+        
+        const totalPrice = cartItens.reduce((total, product) => {
+            quantity[product.id] = quantity[product.id] || 1
+            return total + product.price * quantity[product.id]
+          }, 0)
 
-        setQuantity(initialQuantity);
-    }, [products]);
+        setAmount(totalPrice)
+        setQuantity(initialQuantity)
+
+    }, [cartItens])
 
     const sumValue = (value, productId, newQuantity) => {
         setAmount(amount + value)

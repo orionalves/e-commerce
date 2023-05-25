@@ -12,8 +12,8 @@ export const SquareNumber = ({item}) => (
     <SquareNumbers>{item}</SquareNumbers>
 )
 
-export const Checkbox = ({ onClick, checked }) => {
-    const [isChecked, setIsChecked] = useState(false)
+export const Checkbox = ({ onClick, checked, quantity }) => {
+    const [isChecked, setIsChecked] = useState(false )
 
     useEffect(() => {
         setIsChecked(checked);

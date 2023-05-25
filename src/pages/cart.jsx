@@ -1,17 +1,24 @@
-import { WrapperTitle } from "./styles"
-import Title from "../../components/title"
-import { RetangularButton, SquareNumber } from "../../components/buttons"
-import { screens } from "../../App"
-import CartItens from "../../components/cart-Itens"
+import { WrapperTitle } from "./cart/styles"
+import Title from "../components/title"
+import { RetangularButton, SquareNumber } from "../components/buttons"
+import { screens } from "../App"
+import CartItens from "../components/cart-Itens"
 
-const Cart = ({ goToHome, goToCheckout, cartItens, handleCartItens }) => {
+const Cart = ({ goToHome, goToCheckout, cartItens, handleCartItens, quantity, setQuantity, amount, setAmount, handleQuantity}) => {
     return (
         <>
             <WrapperTitle>
                 <Title title="Carrinho" />
                 <SquareNumber item={cartItens.length} />
             </WrapperTitle>
-            <CartItens cartItens={cartItens} updateCart={handleCartItens}/>
+            <CartItens 
+                cartItens={cartItens} 
+                updateCart={handleCartItens} 
+                quantity={quantity} 
+                setQuantity={setQuantity}
+                amount={amount}
+                setAmount={setAmount}
+                handleQuantity={handleQuantity}/>
                 <RetangularButton
                     item="Voltar"
                     position="fixed"

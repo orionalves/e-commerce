@@ -4,13 +4,13 @@ import { RetangularButton, SquareNumber } from "../components/buttons"
 import { screens } from "../App"
 import Products from "../components/products"
 
-const Home = ({ changePage, cartItens, handleCartItens }) => (
+const Home = ({ changePage, cartItens, handleCartItens, quantity}) => (
     <>
         <WrapperTitle>
             <Title title="Produtos" />
             <SquareNumber item={cartItens.length} />
         </WrapperTitle>
-        <Products itens={cartItens} setItens={handleCartItens} />
+        <Products itens={cartItens} setItens={handleCartItens} quantity={quantity}/>
         <RetangularButton
             item="Ir para o carrinho"
             position="fixed"

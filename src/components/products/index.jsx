@@ -8,7 +8,8 @@ const Products = ({ itens, setItens }) => (
             <Product key={product.id}>
                 <Image src={product.image} alt={product.title + ' image'} />
                 <LineBottom>
-                    <Checkbox checked={itens.includes(product)}
+                    <Checkbox 
+                        checked={itens.includes(product)}
                         onClick={(checked) => setItens( checked ? [...itens, product] : itens.filter((object) => object !== product) )}
                     />
                     <p>Valor: R${product.price}</p>
@@ -18,4 +19,4 @@ const Products = ({ itens, setItens }) => (
     </Games>
 )
 
-export default Products;
+export default Products
