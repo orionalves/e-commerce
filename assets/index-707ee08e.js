@@ -282,6 +282,7 @@ Error generating stack: `+i.message+`
     font-weight: 700;
 `,A0=({cartItens:e,updateCart:t,quantity:n,setQuantity:r,amount:l,setAmount:i,handleQuantity:o})=>{Ce.useEffect(()=>{const p=e.reduce((h,y)=>(h[y.id]=n[y.id]>0?n[y.id]:1,h),{}),m=e.reduce((h,y)=>(n[y.id]=n[y.id]||1,h+y.price*n[y.id]),0);i(m),r(p)},[e]);const u=(p,m,h)=>{i(l+p),c(m,h)},s=(p,m,h)=>{i(()=>{if(n[m]>0)return l-p}),c(m,h)},c=(p,m)=>{r(h=>({...h,[p]:m}))};return P.jsxs(w0,{children:[e.map(p=>n[p.id]>0?P.jsxs(S0,{children:[P.jsx(y0,{src:p.image,alt:p.title+" image"}),P.jsxs(k0,{children:[P.jsx(x0,{children:p.title}),P.jsxs(so,{children:["Valor: R$ ",p.price]}),P.jsxs(so,{children:["Quantidade: ",n[p.id]]}),P.jsxs(C0,{children:[P.jsx(Ia,{item:"-",onClick:()=>s(p.price,p.id,n[p.id]-1)}),P.jsx(Ia,{item:"+",onClick:()=>u(p.price,p.id,n[p.id]+1)})]})]})]},p.id):null),P.jsxs(so,{children:["Total: ",l]})]})},E0=({goToHome:e,goToCheckout:t,cartItens:n,handleCartItens:r,quantity:l,setQuantity:i,amount:o,setAmount:u,handleQuantity:s})=>P.jsxs(P.Fragment,{children:[P.jsxs(v0,{children:[P.jsx(ds,{title:"Carrinho"}),P.jsx(hd,{item:n.length})]}),P.jsx(A0,{cartItens:n,updateCart:r,quantity:l,setQuantity:i,amount:o,setAmount:u,handleQuantity:s}),P.jsx(Gl,{item:"Voltar",position:"fixed",bottom:"6.3rem",left:"1.5rem",onClick:()=>e(Ut.home)}),P.jsx(Gl,{item:"Checkout",position:"fixed",bottom:"6.3rem",right:"1.5rem",onClick:()=>t(Ut.checkout)})]}),P0=V.div`
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
 `,N0=V.img`
     height: 10rem;
