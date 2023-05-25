@@ -3,6 +3,7 @@ import { fonts } from "../../theme/constants"
 
 export const WrapperImage = styled.div`
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
 `
 
