@@ -4,7 +4,7 @@ import { RetangularButton } from "../components/buttons"
 import { screens } from "../App"
 import CheckoutItens from "../components/checkout-itens"
 
-const Checkout = ({finish, cartItens, amount, quantity}) => {
+const Checkout = ({finish, cartItens, amount, quantity, eraseData}) => {
     const sum = Object.values(quantity).reduce((accumulator, value) => accumulator + value, 0)
     return (
         <>
@@ -17,7 +17,7 @@ const Checkout = ({finish, cartItens, amount, quantity}) => {
                     position="fixed"
                     bottom="6.3rem"
                     right="1.5rem"
-                    onClick={() => finish(screens.home) }
+                    onClick={() => finish(screens.home)}
             />
         </>
     )

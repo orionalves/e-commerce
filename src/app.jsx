@@ -26,6 +26,7 @@ const App = () => {
     const handleQuantity = (item) => {
         setQuantity(item)
     }
+
     return(
     <Layout> 
         {screens.home === currentPage && <Home 
