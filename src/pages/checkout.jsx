@@ -23,4 +23,5 @@ const Checkout = ({finish, cartItens, amount, quantity, eraseData}) => {
     )
 }
 
+
 export default Checkout
